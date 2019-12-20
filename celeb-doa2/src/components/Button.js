@@ -1,7 +1,12 @@
 import React from "react";
 
 const Button = () => {
-  return <button>BUTTON</button>;
+  return (
+    <div>
+      <button>Alive</button>
+      <button>Dead</button>
+    </div>
+  );
 };
 
 export default Button;
