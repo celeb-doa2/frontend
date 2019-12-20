@@ -13,7 +13,7 @@ export default function SignUp() {
         <form onSubmit={handleSubmit(submitFunc)}>
         <h1>Celebrity: Dead or Alive</h1>
         <h3>Sign up to keep score and compare with friends!</h3>
-        <p><i>Already have an account?</i></p>
+        <p><i>Already have an account? </i></p>
         <button>Click Here!</button><br/>
             <input type="text" placeholder="Select User Name" ref={register} />
             <input type="text" placeholder="Enter Email" name="email" ref={register} />
