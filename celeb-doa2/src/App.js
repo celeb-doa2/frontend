@@ -5,7 +5,7 @@ import SignUp from "../src/components/SignUp"
 function App() {
   return (
     <main> 
-      <SignUp />
+      <SignUp /> {/*this is temporary rendering, to make sure it looks as it should*/}
 
     </main>
   )
