@@ -6,7 +6,7 @@ export default function SignUp() {
     const {register, handleSubmit, errors} = useForm();
 
     const submitFunc = (data) => {
-        console.log(data) {/*you can view user input in console log, confirms data is passed through*/}
+        console.log(data);  {/*you can view user input in console log, confirms data is passed through*/}
     }
 
     return (
