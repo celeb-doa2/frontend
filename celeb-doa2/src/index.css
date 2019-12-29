@@ -1,13 +1,17 @@
+/* dark sky blue: #02B1DB
+dark seafoam: #03E490
+aqua: #18E7DD
+indigo: #1D16C5
+white: #FFFFFF
+canary: #FDFD71  */
+
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  background-image: linear-gradient(-120deg, #03E490, #18E7DD, #03E490);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+ 
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
