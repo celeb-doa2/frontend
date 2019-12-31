@@ -1,0 +1,13 @@
+.header {
+    text-align: center;
+}
+
+.picture {
+    display: flex;
+    justify-content: center;
+}
+
+.picturecard {
+    margin: 20px 20px;
+    text-align: center;
+}
