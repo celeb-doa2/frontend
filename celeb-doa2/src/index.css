@@ -7,11 +7,12 @@ canary: #FDFD71  */
 
 
 
-body {
+html {
+  width: 100%;
+  height: 100%;
   margin: 0;
   background-image: linear-gradient(-120deg, #03E490, #18E7DD, #03E490);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
- 
+  background-repeat:no-repeat;
+  background-size: cover;
 
 }

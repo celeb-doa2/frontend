@@ -6,8 +6,8 @@ import styled from "styled-components";
 
 export default function SignUp() {
     const FormBox = styled.form`
-     width: 50%;
-     height: 50%;
+     width: 450px;
+     height: 340px;
      padding: 10px;
      border: 1px soild black;
      background-color: white;
