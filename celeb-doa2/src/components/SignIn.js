@@ -46,7 +46,7 @@ axiosWithAuth = () => {
       })
       .catch(err =>
         console.log(
-          "bk: Login.js: Login: login: catch: err.message: ",
+          "catch: err.message: ",
           err.message
         )
       );

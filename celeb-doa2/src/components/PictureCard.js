@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import Modal from './Modal';
 
+import '../css/answer.css'
 const PictureCard = props => {
 
 
   const [score, setScore] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
 
+  const [isVisible, setIsVisible] = useState(true);
+  
 
 
 
@@ -36,8 +37,9 @@ const PictureCard = props => {
       console.log(props.data.death);
       localStorage.setItem("score", newValue);
       localStorage.setItem("count", newValue2);
+      console.log(isVisible, "isVisible???!!")
       alert('correct');
-      setIsOpen({ isOpen: isOpen })
+      setIsVisible(false)
       window.location.reload(false);
       
     } else {
@@ -46,8 +48,7 @@ const PictureCard = props => {
       var newValue2 = value2 + 1;
       localStorage.setItem("count", newValue2);
       console.log(props.data.death)
-      setIsOpen({ isOpen: isOpen })
-      console.log(isOpen, "isOpen?")
+      setIsVisible(false)
       window.location.reload(false);
     };
   }
@@ -62,7 +63,7 @@ const PictureCard = props => {
       var newValue = value + 1;
       localStorage.setItem("score", newValue);
       console.log(props.data.death);
-      setIsOpen({ isOpen: isOpen })
+      setIsVisible(false)
       window.location.reload(false);
       
     } else {
@@ -71,7 +72,7 @@ const PictureCard = props => {
       localStorage.setItem("count", newValue2);
       alert('wrong');
       console.log(props.data.death);
-      setIsOpen({ isOpen: isOpen })
+      setIsVisible(false)
       window.location.reload(false);
     };
   }
@@ -82,15 +83,17 @@ const PictureCard = props => {
     window.location.reload(false);
   }
 
-  function handleOpenModal () {
-    setIsOpen({ isOpen: !isOpen })
-    console.log("open")
+  function timeOut() {
+    setTimeout(() => setIsVisible(false), 3000);
   }
- 
+
+  let timeoutID;
+
   return (
     <div className='picturecard' >
       {console.log(props, 'props')}
       {console.log(props,'isDead?')}
+      {console.log(isVisible,'isVisible!!!?')}
       <h1>{props.data.name}</h1>
       {console.log(window.localStorage)}
       <div>
@@ -105,17 +108,11 @@ const PictureCard = props => {
         <button onClick={handleClickAlive}>Alive</button>
         <button onClick={handleReset}>Start Over</button>
       </div>
-      <div >
-        <button onClick={handleOpenModal}>Open Modal</button>
-        {console.log(isOpen, "isOpen???????")}
-        <Modal 
-          isOpen={isOpen}
-          onRequestClose={handleOpenModal}
-        />
+      <div>
+        {/* <h3 className="correct">CORRECT!</h3>
+        <h3 className="correct">CORRECT!</h3>
+        <h3 className="wrong">WRONG!</h3> */}
       </div>
-
-
-
       
     </div>
   );

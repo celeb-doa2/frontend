@@ -1,0 +1,18 @@
+.correct {
+    color: green;
+}
+
+.wrong {
+    color: red;
+    display: none;
+}
+
+.isVisible {
+    visibility: visible;
+}
+
+.isHidden {
+    display: none;
+}
+
+
