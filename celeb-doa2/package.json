@@ -9,7 +9,10 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-hook-form": "^3.29.4",
+<<<<<<< HEAD
     "react-router-dom": "^5.1.2",
+=======
+>>>>>>> bd2b638ba17ac37193e4d10e5719c59517321b16
     "react-scripts": "3.3.0",
     "styled-components": "^4.4.1"
   },
