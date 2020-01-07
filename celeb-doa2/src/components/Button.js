@@ -1,12 +1,11 @@
 import React from "react";
 
-const Button = () => {
-  return (
-    <div>
-      <button>Alive</button>
-      <button>Dead</button>
-    </div>
-  );
-};
+const Button = (props) => {
+
+    
+    return (
+        <button>{props.label}</button>
+    )
+}
 
 export default Button;
