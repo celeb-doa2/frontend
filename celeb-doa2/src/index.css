@@ -1,9 +1,9 @@
-/* dark sky blue: #02B1DB
-dark seafoam: #03E490
-aqua: #18E7DD
-indigo: #1D16C5
-white: #FFFFFF
-canary: #FDFD71  */
+/* cyan: #02B1DB
+bright turquoise: #18E7DD
+purple: #7F74FF
+hot pink: #FF23FF
+yellow: #FCFC32 
+white */
 
 
 
@@ -11,7 +11,7 @@ html {
   width: 100%;
   height: 100%;
   margin: 0;
-  background-image: linear-gradient(-120deg, #03E490, #18E7DD, #03E490);
+  background-image: linear-gradient(-120deg, #02B1DB,  #FF23FF);
   background-repeat:no-repeat;
   background-size: cover;
 
