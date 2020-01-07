@@ -1,13 +1,17 @@
 import React from "react";
 import "./App.css";
-import Button from "./components/Button";
+
+import SignUp from "../src/components/SignUp";
 
 function App() {
+    
   return (
-    <div className="App">
-      <Button />
-    </div>
-  );
+   <main> 
+      <SignUp /> {/*this is temporary rendering, to make sure it looks as it should*/}
+      </main>
+  )
+
 }
+
 
 export default App;
