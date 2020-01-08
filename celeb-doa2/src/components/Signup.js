@@ -1,6 +1,7 @@
 import React from "react";
 import useForm from "react-hook-form";
 import styled from "styled-components";
+import SignIn from "./SignIn";
 import axios from "axios";
 
 
@@ -88,8 +89,8 @@ export default function SignUp() {
         <Tagline>Sign up to keep score and compare with friends!</Tagline>
         <Row><p>
         <ItalicQ><i>Already have an account? </i></ItalicQ>
-        <button>Click Here!</button><br/><br/></p></Row>{/*this will link to SignIn*/}
-            <Input><input type="text" placeholder="Select User Name" name="username" ref={register} /></Input>
+        <button><a href={SignIn}>Click Here!</a></button><br/><br/></p></Row>{/*this will link to SignIn*/}
+            <Input><input type="text" placeholder="Select User Name" ref={register} /></Input>
             <Input><input type="text" placeholder="Enter Email" name="email" ref={register} /></Input>
             <Input><input type="password" placeholder="Select Password" name="password" ref={register} /></Input>
             <input type="submit" />
