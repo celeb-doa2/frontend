@@ -1,7 +1,7 @@
 import React from "react";
 import useForm from "react-hook-form";
 import styled from "styled-components";
-
+import Button from "./Button";
 
 
 export default function SignUp() {
@@ -73,11 +73,11 @@ export default function SignUp() {
         <Tagline>Sign up to keep score and compare with friends!</Tagline>
         <Row><p>
         <ItalicQ><i>Already have an account? </i></ItalicQ>
-        <button>Click Here!</button><br/><br/></p></Row>{/*this will link to SignIn*/}
+        <Button label="Click Here!"></Button><br/><br/></p></Row>{/*this will link to SignIn*/}
             <Input><input type="text" placeholder="Select User Name" ref={register} /></Input>
             <Input><input type="text" placeholder="Enter Email" name="email" ref={register} /></Input>
             <Input><input type="password" placeholder="Select Password" name="password" ref={register} /></Input>
-            <input type="submit" />
+            <Button label="Submit"><input type="submit" /></Button>
         </form>
         </FormBox>
     );

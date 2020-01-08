@@ -1,10 +1,11 @@
 import React from "react";
+import styled from "styled-components";
+
+
 
 const Button = (props) => {
 
-    // white & teal buttons, em size - whatever, only for form buttons etc, game buttons will be separate.
-    
-    return (
+     return (
         <button>{props.label}</button>
     )
 }

@@ -16,3 +16,17 @@ html {
   background-size: cover;
 
 }
+
+button {
+  background-color: #18E7DD;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  color: #fff;
+  border-radius: 10px;
+  text-shadow: -1px 1px 2px #000;
+  padding: 1%;
+  width: 25%;
+  box-shadow: 1px 1px 15px #3A3574;
+  border: 1px solid #3A3574;
+}
