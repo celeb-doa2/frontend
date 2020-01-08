@@ -4,21 +4,27 @@ import React, {useEffect, useState } from 'react';
 import Axios from "axios";
 
 
-export default CelebCard = () => {
+const CelebCard = () => {
     const [celebLife, setCeleb] = useState([]);
 
     useEffect(() => {
         Axios
         .get("https://celeb-death-game.herokuapp.com/api/celebs/")
         .then(res => {
-            console.log("API response: ", res.data.results)
-        setCeleb(res.data.results)
+            console.log("API response: ", res.data)
+        setCeleb(res.data)
         })
         .catch(err => {
             console.error("ERROR", err)
         })
     }, []);
+
+    return (
+        <div>results</div>
+    )
 }
+
+export default CelebCard;
 
 
 
