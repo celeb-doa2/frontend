@@ -1,7 +1,7 @@
 import React from "react";
 import useForm from "react-hook-form";
 import styled from "styled-components";
-
+import axios from "axios";
 
 
 export default function SignUp() {
@@ -64,6 +64,18 @@ export default function SignUp() {
 
     const submitFunc = (data) => {
         console.log(data);  {/*you can view user input in console log, confirms data is passed through*/}
+        delete data.email;
+        axios
+        .post('/auth/register', data)
+        .then(res => {
+            if (res.status === 201) {
+                return axios
+                    .post('/auth/login', data)
+                    .then(res => console.log('LOGIN: ', res))
+                    .catch(err => console.log('LOGIN ERROR: ', err));
+            }
+        })
+        .cath(err => console.log('REGISTER ERROR: ', err));
     }
 
     return (
