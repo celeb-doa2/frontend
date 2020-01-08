@@ -46,7 +46,7 @@ const SignIn = () => {
     text-align: center;
     `;
 
-    const {signin, handleSubmit, errors} = useForm();
+    const {signIn, handleSubmit, errors} = useForm();
 
     const submitData = (data) => {
         console.log(data);  
@@ -57,8 +57,8 @@ const SignIn = () => {
                 <form onSubmit={handleSubmit(submitData)}>
                 <Header>Celebrity: Dead or Alive</Header>
                 <Tagline>Ready to Play?!</Tagline>
-                    <p><input type="text" placeholder="Username" ref={signin}/></p>
-                    <p><input type="text" placeholder="Password" ref={signin}/></p>
+                    <p><input type="text" placeholder="Username" ref={signIn}/></p>
+                    <p><input type="text" placeholder="Password" ref={signIn}/></p>
                 <Button label="Sign In" />
                 </form>
             </FormBox>
