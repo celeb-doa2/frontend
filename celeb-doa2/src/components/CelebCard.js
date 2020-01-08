@@ -2,6 +2,7 @@ import React, {useEffect, useState } from 'react';
 import useForm from "react-hook-form";
 import styled from "styled-components";
 import axios from "axios";
+import Button from "./Button";
 
 const CelebCard = () => {
 
@@ -67,8 +68,10 @@ const CelebCard = () => {
         <form>
         <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
         <Tagline><h3>...(not)quite dead yet?</h3></Tagline>
-        <img src= {setCeleb.image_url}></img>
-        <Name><p>{setCeleb.name}</p></Name>
+        <Name><p>{celeb.name}</p></Name>
+        <img className="image" src={celeb.image_url}></img>
+        <p></p>
+        <Button label="ALIVE"></Button> OR <Button label="DEAD"></Button>
         {/* <Dead></Dead>
         <Alive></Alive> */}
         </form>

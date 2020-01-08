@@ -19,7 +19,7 @@ html {
 
 button {
   background-color: #18E7DD;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Staatliches', sans-serif;
   font-weight: 300;
   font-size: 1em;
   color: #fff;
@@ -29,4 +29,10 @@ button {
   width: 25%;
   box-shadow: 1px 1px 15px #3A3574;
   border: 1px solid #3A3574;
+}
+
+.image {
+  
+  height: 25%;
+  width: 25%;
 }
