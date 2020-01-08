@@ -38,11 +38,6 @@ const SignIn = () => {
     -webkit-text-stroke: 0.5px #03E490;    
     `;
 
-    const Row = styled.p`
-    align-items: center; 
-    text-align: center;
-    `;
-
     const Input = styled.text`
     display: flex; 
     flex-direction: column;
@@ -50,20 +45,11 @@ const SignIn = () => {
     margin: 2.5%;
     `;
 
-    const ItalicQ = styled.i`
-    font-size: 1em;
-    color: white;
-    margin: 0.5%; 
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    text-shadow: 1px 1px #3A3574;
-    `;
-
     const {signin, handleSubmit, errors} = useForm();
 
     const submitData = (data) => {
         console.log(data);
-
+    }
     return (
         <div>
             <FormBox>
@@ -77,7 +63,6 @@ const SignIn = () => {
             </FormBox>
         </div>
     )
-    }
 }
 
 export default SignIn;
