@@ -7,9 +7,12 @@ import SignIn from '../src/components/Signin';
 
 function App() {
   return (
-    <main>
-      <SignUp />
-      {/*this is temporary rendering, to make sure it looks as it should*/}
+
+    <main> 
+      <SignUp /> {/*this is temporary rendering, to make sure it looks as it should*/}
+      <SignIn />
+      
+
     </main>
   );
 }
