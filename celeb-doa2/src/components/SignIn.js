@@ -47,8 +47,8 @@ const SignIn = () => {
     const {signin, handleSubmit, errors} = useForm();
 
     const submitData = (data) => {
-        console.log(data);  
-    }
+        console.log(data);
+
     return (
         <div>
             <FormBox>
@@ -62,7 +62,7 @@ const SignIn = () => {
             </FormBox>
         </div>
     )
-
+    }
 }
 
 export default SignIn;
