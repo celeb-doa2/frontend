@@ -19,25 +19,16 @@ const CelebCard = () => {
         })
     }, []);
 
-    return (
-        <div>results</div>
-    )
+
+return (
+    <FormBox>
+    <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
+    <Tagline>...(not)quite dead yet?</Tagline>
+    <CelebImg></CelebImg>
+    <Name></Name>
+    <Dead></Dead>
+    <Alive></Alive>
+    </FormBox>
+);
 }
-
 export default CelebCard;
-
-
-
-// return (
-//     <FormBox>
-//     <form onSubmit={handleSubmit(submitFunc)}>
-//     <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
-//     <Tagline>...(not)quite dead yet?</Tagline>
-//     <CelebImg></CelebImg>
-//     <Name></Name>
-//     <Dead></Dead>
-//     <Alive></Alive>
-//     </form>
-//     </FormBox>
-// );
-// }
