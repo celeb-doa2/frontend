@@ -14,7 +14,6 @@ const SignIn = () => {
      margin: 2%;
      align-items: center;
      box-shadow: -5px 5px 15px #3A3574;
-
      `;
 
     const Logo = styled.a`
@@ -44,6 +43,22 @@ const SignIn = () => {
     text-align: center;
     `;
 
+    const Input = styled.text`
+    display: flex; 
+    flex-direction: column;
+    padding: 2%;
+    margin: 2.5%;
+    `;
+
+    const ItalicQ = styled.i`
+    font-size: 1em;
+    color: white;
+    margin: 0.5%; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-shadow: 1px 1px #3A3574;
+    `;
+
     const {signin, handleSubmit, errors} = useForm();
 
     const submitData = (data) => {
@@ -55,8 +70,8 @@ const SignIn = () => {
                 <form onSubmit={handleSubmit(submitData)}>
                 <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
                 <Tagline>Ready to Play?!</Tagline>
-                    <p><input type="text" placeholder="Username" ref={signin}/></p>
-                    <p><input type="text" placeholder="Password" ref={signin}/></p>
+                    <p><input type="text" placeholder="Username" name="username" ref={signin}/></p>
+                    <p><input type="text" placeholder="Password" name="password" ref={signin}/></p>
                 <Button label="Sign In" />
                 </form>
             </FormBox>

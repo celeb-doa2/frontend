@@ -2,7 +2,7 @@ import React from "react";
 import useForm from "react-hook-form";
 import styled from "styled-components";
 import Button from "./Button";
-
+import axios from "axios";
 
 export default function SignUp() {
     const FormBox = styled.form`
