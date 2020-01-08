@@ -17,17 +17,15 @@ const SignIn = () => {
      box-shadow: -5px 5px 15px grey;
      `;
 
-    const Header = styled.h1`
-    color: #1D16C5;
-    font-size: 3em;
-    font-family: 'Staatliches', cursive;
-    line-height: 0.9;
-    box-shadow: -5px 5px 10px lightgray;
-    text-align: center;  
-    margin: 10px 10px 0px 10px;  
-    background-color: #FDFD71;
+    const Logo = styled.a`
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;      
     `;
-
+    
     const Tagline = styled.h3`
     font-size: 1.5em;
     text-align: center;
@@ -55,7 +53,7 @@ const SignIn = () => {
         <div>
             <FormBox>
                 <form onSubmit={handleSubmit(submitData)}>
-                <Header>Celebrity: Dead or Alive</Header>
+                <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
                 <Tagline>Ready to Play?!</Tagline>
                     <p><input type="text" placeholder="Username" ref={signin}/></p>
                     <p><input type="text" placeholder="Password" ref={signin}/></p>
