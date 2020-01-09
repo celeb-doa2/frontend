@@ -1,8 +1,8 @@
 import React from "react";
 import useForm from "react-hook-form";
 import styled from "styled-components";
-
-
+import Button from "./Button";
+import axios from "axios";
 
 export default function SignUp() {
     const FormBox = styled.form`
@@ -64,8 +64,21 @@ export default function SignUp() {
 
     const submitFunc = (data) => {
         console.log(data);  {/*you can view user input in console log, confirms data is passed through*/}
+        
+        delete data.email;
+        axios
+        .post('/auth/register', data)
+        .then(res => {
+            if (res.status === 201) {
+            return axios
+                .post('/auth/login', data)
+                .then(res => console.log('LOGIN: ', res))
+                .catch(err => console.log('LOGIN ERROR: ', err));
+            }
+        })
+        .catch(err => console.log('REGISTER ERROR: ', err));
     }
-
+   
     return (
         <FormBox>
         <form onSubmit={handleSubmit(submitFunc)}>
@@ -73,11 +86,11 @@ export default function SignUp() {
         <Tagline>Sign up to keep score and compare with friends!</Tagline>
         <Row><p>
         <ItalicQ><i>Already have an account? </i></ItalicQ>
-        <button>Click Here!</button><br/><br/></p></Row>{/*this will link to SignIn*/}
-            <Input><input type="text" placeholder="Select User Name" ref={register} /></Input>
+        <Button label="Click Here!"></Button><br/><br/></p></Row>{/*this will link to SignIn*/}
+            <Input><input type="text" placeholder="Select User Name" name="username" ref={register} /></Input>
             <Input><input type="text" placeholder="Enter Email" name="email" ref={register} /></Input>
             <Input><input type="password" placeholder="Select Password" name="password" ref={register} /></Input>
-            <input type="submit" />
+            <Button label="Submit"><input type="submit" /></Button>
         </form>
         </FormBox>
     );
