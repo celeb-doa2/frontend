@@ -53,7 +53,7 @@ const CelebCard = () => {
     const [celeb, setCeleb] = useState([]);
     useEffect(() => {
         axios
-        .get("https://celeb-death-game.herokuapp.com/api/free")
+        .get("https://celeb-death-game.herokuapp.com/api/celebs/")
         .then(res => {
             console.log("API response: ", res.data)
         setCeleb(res.data)
