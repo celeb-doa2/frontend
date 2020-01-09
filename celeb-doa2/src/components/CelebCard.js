@@ -67,11 +67,11 @@ const CelebCard = () => {
         <FormBox>
         <form>
             <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
-                <Tagline><h3>...(not)quite dead yet?</h3></Tagline>
-                <Name><p>{celeb.name}</p></Name>
-                <img className="image" src={celeb.image_url}></img>
-                <p>Born: {celeb.birth} - ???</p>
-                <p><Button label="ALIVE"></Button> OR <Button label="DEAD"></Button></p>
+            <Tagline><h3>...(not)quite dead yet?</h3></Tagline>
+            <Name><p>{celeb.name}</p></Name>
+            <img className="image" src={celeb.image_url}></img>
+            <p>Born: {celeb.birth} - ???</p>
+            <p><Button label="ALIVE"></Button> OR <Button label="DEAD"></Button></p>
 
         </form>
         </FormBox>
