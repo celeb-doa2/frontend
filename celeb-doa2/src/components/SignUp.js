@@ -64,7 +64,7 @@ export default function SignUp() {
 
     const submitFunc = (data) => {
         console.log(data);  {/*you can view user input in console log, confirms data is passed through*/}
-
+        
         delete data.email;
         axios
         .post('/auth/register', data)
@@ -78,7 +78,7 @@ export default function SignUp() {
         })
         .catch(err => console.log('REGISTER ERROR: ', err));
     };
-    
+   
     return (
         <FormBox>
         <form onSubmit={handleSubmit(submitFunc)}>
