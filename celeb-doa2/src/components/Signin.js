@@ -2,6 +2,7 @@ import React from "react";
 import useForm from "react-hook-form";
 import styled from "styled-components";
 import Button from "./Button";
+import interceptors from "../interceptors";
 
 
 const SignIn = () => {
@@ -63,8 +64,8 @@ const SignIn = () => {
                 <form onSubmit={handleSubmit(submitData)}>
                 <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
                 <Tagline>Ready to Play?!</Tagline>
-                    <p><input type="text" placeholder="Username" ref={signIn}/></p>
-                    <p><input type="text" placeholder="Password" ref={signIn}/></p>
+                    <p><input type="text" placeholder="Username" ref={signin}/></p>
+                    <p><input type="text" placeholder="Password" ref={signin}/></p>
                 <Button label="Sign In" />
                 </form>
             </FormBox>
