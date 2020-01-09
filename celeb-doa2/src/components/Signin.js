@@ -2,9 +2,7 @@ import React from "react";
 import useForm from "react-hook-form";
 import styled from "styled-components";
 import Button from "./Button";
-import interceptors from "../interceptors";
-
-
+import axios from "axios";
 const SignIn = () => {
     const FormBox = styled.form`
      width: 437px;
@@ -16,7 +14,6 @@ const SignIn = () => {
      align-items: center;
      box-shadow: -5px 5px 15px #3A3574;
      `;
-
     const Logo = styled.a`
     display: flex;
     flex-direction: row;
@@ -25,8 +22,6 @@ const SignIn = () => {
     margin-right: auto;
     width: 50%;      
     `;
-
-
     const Tagline = styled.h3`
     font-size: 1.5em;
     text-align: center;
@@ -38,25 +33,26 @@ const SignIn = () => {
     text-shadow: -3px 3px #3A3574;
     -webkit-text-stroke: 0.5px #03E490;    
     `;
-
-    const Row = styled.p`
-    align-items: center; 
-    text-align: center;
-    `;
-
-
     const Input = styled.text`
     display: flex; 
     flex-direction: column;
     padding: 2%;
     margin: 2.5%;
     `;
-
-
     const {signin, handleSubmit, errors} = useForm();
-
     const submitData = (data) => {
-        console.log(data);  
+        console.log(data);
+        axios
+        .post('/auth/register', data)
+        .then(res => {
+            if (res.status === 201) {
+            return axios
+                .post('/auth/login', data)
+                .then(res => console.log('LOGIN: ', res))
+                .catch(err => console.log('LOGIN ERROR: ', err));
+            }
+        })
+        .catch(err => console.log('REGISTER ERROR: ', err));
     }
     return (
         <div>
@@ -64,14 +60,13 @@ const SignIn = () => {
                 <form onSubmit={handleSubmit(submitData)}>
                 <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
                 <Tagline>Ready to Play?!</Tagline>
-                    <p><input type="text" placeholder="Username" ref={signin}/></p>
-                    <p><input type="text" placeholder="Password" ref={signin}/></p>
+                    <p><input type="text" placeholder="Username" name="username" ref={signin}/></p>
+                    <p><input type="text" placeholder="Password" name="password" ref={signin}/></p>
                 <Button label="Sign In" />
                 </form>
             </FormBox>
         </div>
     )
-
 }
-
 export default SignIn;
+

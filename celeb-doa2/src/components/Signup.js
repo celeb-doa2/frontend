@@ -1,11 +1,8 @@
 import React from "react";
 import useForm from "react-hook-form";
 import styled from "styled-components";
-import SignIn from "./SignIn";
+import Button from "./Button";
 import axios from "axios";
-import interceptors from "../interceptors";
-
-
 export default function SignUp() {
     const FormBox = styled.form`
      width: 437px;
@@ -16,9 +13,7 @@ export default function SignUp() {
      margin: 2%;
      align-items: center;
      box-shadow: -5px 5px 15px #3A3574;
-
      `;
-
     const Logo = styled.a`
     display: flex;
     flex-direction: row;
@@ -27,8 +22,6 @@ export default function SignUp() {
     margin-right: auto;
     width: 50%;      
     `;
-
-
     const Tagline = styled.h3`
     font-size: 1.5em;
     text-align: center;
@@ -40,19 +33,16 @@ export default function SignUp() {
     text-shadow: -3px 3px #3A3574;
     -webkit-text-stroke: 0.5px #03E490;    
     `;
-
     const Row = styled.p`
     align-items: center; 
     text-align: center;
     `;
-
     const Input = styled.text`
     display: flex; 
     flex-direction: column;
     padding: 2%;
     margin: 2.5%;
     `;
-
     const ItalicQ = styled.i`
     font-size: 1em;
     color: white;
@@ -61,13 +51,9 @@ export default function SignUp() {
     font-weight: 300;
     text-shadow: 1px 1px #3A3574;
     `;
-
     const {register, handleSubmit, errors} = useForm();
-
-    const submitFunc = data => {
-        console.log(
-        data
-        ); /*you can view user input in console log, confirms data is passed through*/
+    const submitFunc = (data) => {
+        console.log(data);  {/*you can view user input in console log, confirms data is passed through*/}
         delete data.email;
         axios
         .post('/auth/register', data)
@@ -81,7 +67,7 @@ export default function SignUp() {
         })
         .catch(err => console.log('REGISTER ERROR: ', err));
     };
-
+    
     return (
         <FormBox>
         <form onSubmit={handleSubmit(submitFunc)}>
@@ -89,12 +75,17 @@ export default function SignUp() {
         <Tagline>Sign up to keep score and compare with friends!</Tagline>
         <Row><p>
         <ItalicQ><i>Already have an account? </i></ItalicQ>
-        <button><a href={SignIn}>Click Here!</a></button><br/><br/></p></Row>{/*this will link to SignIn*/}
-            <Input><input type="text" placeholder="Select User Name" ref={register} /></Input>
+        <Button label="Click Here!"></Button><br/><br/></p></Row>{/*this will link to SignIn*/}
+            <Input><input type="text" placeholder="Select User Name" name="username" ref={register} /></Input>
             <Input><input type="text" placeholder="Enter Email" name="email" ref={register} /></Input>
             <Input><input type="password" placeholder="Select Password" name="password" ref={register} /></Input>
-            <input type="submit" />
+            <Button label="Submit"><input type="submit" /></Button>
         </form>
         </FormBox>
     );
 }
+
+
+
+
+

@@ -1,4 +1,4 @@
-
+import { Route } from "react-router-dom";
 import React from "react";
 import "./App.css";
 import SignUp from "./components/SignUp";
@@ -6,15 +6,15 @@ import SignIn from "./components/SignIn";
 import CelebCard from "./components/CelebCard";
 
 
+
 function App() {
   return (
 
-    <main> 
-      <SignUp /> {/*this is temporary rendering, to make sure it looks as it should*/}
-      <SignIn />
-      <CelebCard />    
-
-    </main>
+    <div> 
+      <Route exact path="/" component={CelebCard} />
+      <Route path="/signup" component={SignUp} />
+      <Route path="/signin" component={SignIn}/>
+    </div>
   );
-}
+};
 export default App;
