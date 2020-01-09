@@ -7,11 +7,11 @@ import Button from "./Button";
 const CelebCard = () => {
 
     const FormBox = styled.form`
-    width: 437px;
-    height: 450px;
-    padding: 2%;
-    background-color: #7F74FF;
-    border-radius: 10px;
+        width: 437px;
+        height: 450px;
+        padding: 2%;
+        background-color: #7F74FF;
+        border-radius: 10px;
     margin: 2%;
     align-items: center;
     box-shadow: -5px 5px 15px #3A3574;
@@ -70,10 +70,9 @@ const CelebCard = () => {
         <Tagline><h3>...(not)quite dead yet?</h3></Tagline>
         <Name><p>{celeb.name}</p></Name>
         <img className="image" src={celeb.image_url}></img>
-        <p></p>
-        <Button label="ALIVE"></Button> OR <Button label="DEAD"></Button>
-        {/* <Dead></Dead>
-        <Alive></Alive> */}
+        <p>Born: {celeb.birth} - ???</p>
+        <p><Button label="ALIVE"></Button> OR <Button label="DEAD"></Button></p>
+
         </form>
         </FormBox>
     );

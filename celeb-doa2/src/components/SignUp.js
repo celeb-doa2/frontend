@@ -2,7 +2,7 @@ import React from "react";
 import useForm from "react-hook-form";
 import styled from "styled-components";
 import Button from "./Button";
-
+import axios from "axios";
 
 export default function SignUp() {
     const FormBox = styled.form`
@@ -78,7 +78,7 @@ export default function SignUp() {
         })
         .catch(err => console.log('REGISTER ERROR: ', err));
     }
-
+   
     return (
         <FormBox>
         <form onSubmit={handleSubmit(submitFunc)}>
@@ -87,7 +87,7 @@ export default function SignUp() {
         <Row><p>
         <ItalicQ><i>Already have an account? </i></ItalicQ>
         <Button label="Click Here!"></Button><br/><br/></p></Row>{/*this will link to SignIn*/}
-            <Input><input type="text" placeholder="Select User Name" ref={register} /></Input>
+            <Input><input type="text" placeholder="Select User Name" name="username" ref={register} /></Input>
             <Input><input type="text" placeholder="Enter Email" name="email" ref={register} /></Input>
             <Input><input type="password" placeholder="Select Password" name="password" ref={register} /></Input>
             <Button label="Submit"><input type="submit" /></Button>
