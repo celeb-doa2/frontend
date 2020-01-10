@@ -27,6 +27,14 @@ button {
   box-shadow: -1px 3px 5px #3A3574;
   border: 1px solid #02B1DB;
 }
+
+.butt {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .image {
   
   height: 25%;
