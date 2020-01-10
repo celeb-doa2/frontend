@@ -88,8 +88,9 @@ export default function SignUp() {
         <Row><p>
         <ItalicQ><i>Already have an account? </i></ItalicQ>
         <Button label="Click Here!"></Button><br/><br/></p></Row>{/*this will link to SignIn*/}
-            <Input><input type="text" placeholder="Select User Name" name="username" ref={register} /></Input>
-            <Input><input type="password" placeholder="Select Password" name="password" ref={register} /></Input>
+            <Input><input type="text" placeholder="Select User Name" name="username" ref={register({ required: true })} /></Input>
+            {errors.username && <span>These fields are required</span>}
+            <Input><input type="password" placeholder="Select Password" name="password" ref={register({ required: true })} /></Input>
             <Button label="Submit"><input type="submit" /></Button>
         </form>
         </FormBox>
