@@ -5,6 +5,12 @@ import Button from "./Button";
 import axios from "axios";
 
 const SignIn = () => {
+    const Card = styled.section`
+        display: grid;
+        place-items: center;
+        height: 90vh;
+    `;
+
     const FormBox = styled.form`
      width: 437px;
      height: 320px;
@@ -57,6 +63,7 @@ const SignIn = () => {
     }
     return (
         <div>
+        <Card>
             <FormBox>
                 <form onSubmit={handleSubmit(submitData)}>
                 <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
@@ -66,6 +73,7 @@ const SignIn = () => {
                 <Button type="submit" label="Sign In" />
                 </form>
             </FormBox>
+            </Card>
         </div>
     )
 }

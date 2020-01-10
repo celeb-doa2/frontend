@@ -2,6 +2,7 @@ import React, {useEffect, useState } from 'react';
 import styled from "styled-components";
 import axios from "axios";
 import Button from "./Button";
+
 const CelebCard = (props) => {
     const Card = styled.section`
         display: grid;
@@ -74,8 +75,7 @@ const CelebCard = (props) => {
         color: white;   
         `;
     const [celeb, setCeleb] = useState([]);
-    // const [aliveModal, toggleAliveModal] = useModali();
-    // const [deadModal, toggleDeadModal] = useModali();
+   
     useEffect(() => {
         axios
         .get("https://celeb-death-game.herokuapp.com/api/free")
