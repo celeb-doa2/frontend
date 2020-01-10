@@ -99,18 +99,14 @@ const CelebCard = (props) => {
         <Card>
         <section>
         <FormBox>
-        
             <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
-                <Tagline><h3>...(not)quite dead yet?</h3></Tagline>
-                <Name><p>{celeb.name}</p></Name>
-                <CelebPic><img className="image" src={celeb.image_url} alt="celebPic"></img></CelebPic>
-                <Born><p>Born: {celeb.birth} - ???</p></Born>
+                <Tagline>...(not)quite dead yet?</Tagline>
+                <Name>{celeb.name}</Name>
+                <CelebPic><img src={celeb.image_url} className="image" alt="celebPic"></img></CelebPic>
+                <Born>Born: {celeb.birth} - ???</Born>
                 
                 <p><Button type="button" label="ALIVE" onClick={AliveTest}></Button>
                 <Button type="button" label="DEAD" onClick={AliveTest}></Button></p>
-                
-                
-        
         </FormBox>
         </section>
         </Card>
