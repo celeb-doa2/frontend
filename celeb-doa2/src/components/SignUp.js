@@ -77,7 +77,7 @@ export default function SignUp() {
             }
         })
         .catch(err => console.log('REGISTER ERROR: ', err));
-    }
+    };
    
     return (
         <FormBox>
