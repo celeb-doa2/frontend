@@ -84,7 +84,6 @@ const CelebCard = (props) => {
     }, []);
 
     const AliveTest = () => {
-        console.log("CELEB", celeb)
         if (celeb.dead === false) {
             console.log(celeb.name, "is alive!");
             alert(`Yes, ${celeb.name} is still alive!`);
