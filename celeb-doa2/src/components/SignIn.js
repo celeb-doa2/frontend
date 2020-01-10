@@ -2,7 +2,7 @@ import React from "react";
 import useForm from "react-hook-form";
 import styled from "styled-components";
 import Button from "./Button";
-
+import axios from "axios";
 
 const SignIn = () => {
     const FormBox = styled.form`
@@ -49,6 +49,18 @@ const SignIn = () => {
 
     const submitData = (data) => {
         console.log(data);
+
+        axios
+        .post('/auth/register', data)
+        .then(res => {
+            if (res.status === 201) {
+            return axios
+                .post('/auth/login', data)
+                .then(res => console.log('LOGIN: ', res))
+                .catch(err => console.log('LOGIN ERROR: ', err));
+            }
+        })
+        .catch(err => console.log('REGISTER ERROR: ', err));
     }
     return (
         <div>
