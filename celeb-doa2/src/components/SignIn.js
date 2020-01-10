@@ -7,7 +7,7 @@ import axios from "axios";
 const SignIn = () => {
     const FormBox = styled.form`
      width: 437px;
-     height: 450px;
+     height: 320px;
      padding: 2%;
      background-color: #7F74FF;
      border-radius: 10px;
@@ -61,8 +61,8 @@ const SignIn = () => {
                 <form onSubmit={handleSubmit(submitData)}>
                 <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
                 <Tagline>Ready to Play?!</Tagline>
-                    <p><input type="text" placeholder="Username" name="username" ref={register}/></p>
-                    <p><input type="password" placeholder="Password" name="password" ref={register}/></p>
+                <Input><input type="text" placeholder="Username" name="username" ref={register}/></Input>
+                <Input><input type="password" placeholder="Password" name="password" ref={register}/></Input> 
                 <Button type="submit" label="Sign In" />
                 </form>
             </FormBox>

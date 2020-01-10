@@ -3,6 +3,8 @@ import useForm from "react-hook-form";
 import styled from "styled-components";
 import Button from "./Button";
 import axios from "axios";
+import CelebCard from "./CelebCard"
+
 
 export default function SignUp() {
     const FormBox = styled.form`
@@ -31,7 +33,7 @@ export default function SignUp() {
     font-size: 1.5em;
     text-align: center;
     line-height: 1;
-    paddding: 0%;
+    padding: 0%;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: #18E7DD;
@@ -90,8 +92,8 @@ export default function SignUp() {
         <Button label="Click Here!"></Button><br/><br/></p></Row>{/*this will link to SignIn*/}
             <Input><input type="text" placeholder="Select User Name" name="username" ref={register({ required: true })} /></Input>
             {errors.username && <span>These fields are required</span>}
-            <Input><input type="password" placeholder="Select Password" name="password" ref={register({ required: true })} /></Input>
-            <Button label="Submit"><input type="submit" /></Button>
+            <Input><input type="password" placeholder="Select Password, must be at least 5 characters" name="password" ref={register({ required: true, minlength: 5 })} /></Input>
+            <Button  label="Submit"><input type="submit"  /></Button>
         </form>
         </FormBox>
     );

@@ -119,9 +119,9 @@ const CelebCard = (props) => {
                 <Name>{celeb.name}</Name>
                 <CelebPic><img src={celeb.image_url} className="image" alt="celebPic"></img></CelebPic>
                 <Born>Born: {celeb.birth} - ???</Born>
-                
-                <p><Button type="button" label="ALIVE" onClick={AliveTest}></Button>
-                <Button type="button" label="DEAD" onClick={DeadTest}></Button></p>
+                <div><Button type="button" label="ALIVE" onClick={AliveTest}></Button>
+                <Button type="button" label="DEAD" onClick={DeadTest}></Button>
+                </div>
         </FormBox>
         </section>
         </Card>
