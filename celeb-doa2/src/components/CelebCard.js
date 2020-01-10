@@ -3,7 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 import Button from "./Button";
 import { render } from '@testing-library/react';
-
+import Modali, { useModali } from "modali";
 
 const CelebCard = (props) => {
     const Card = styled.section`
@@ -68,11 +68,13 @@ const CelebCard = (props) => {
         color: white;   
 `;
     const [celeb, setCeleb] = useState([]);
-    
+    const [aliveRight, toggleAliveRight] = useModali();
+    const [aliveWrong, toggleAliveWrong] = useModali();
+    const [deadModal, toggleDeadModal] = useModali();
 
     useEffect(() => {
         axios
-        .get("https://celeb-death-game.herokuapp.com/api/free")
+        .get("/free")
         .then(res => {
             console.log("API response: ", res.data)
         setCeleb(res.data)
@@ -87,9 +89,11 @@ const CelebCard = (props) => {
         if (celeb.dead === false) {
             console.log(celeb.name, "is alive!");
             alert(`Yes, ${celeb.name} is still alive!`);
-        } else{
+            window.location.reload();
+        } else {
             console.log(celeb.name, 'died in', celeb.death);
             alert(`No... ${celeb.name} died in ${celeb.death}`);
+            window.location.reload();
         }
     }
 
@@ -97,9 +101,11 @@ const CelebCard = (props) => {
         if (celeb.dead === true) {
             console.log(celeb.name, "is dead!");
             alert(`Yes, sadly ${celeb.name} died in ${celeb.death}.`);
+            window.location.reload();
         } else {
             console.log(celeb.name, "is alive!");
             alert(`No Sorry! ${celeb.name} is still alive and kicking!`)
+            window.location.reload();
         }
     }
 

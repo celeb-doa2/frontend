@@ -3,6 +3,7 @@ import axios from 'axios';
 axios.defaults.baseURL = `https://celeb-death-game.herokuapp.com/api`;
 
 axios.interceptors.request.use(req => {
+  console.log(req)
   const token = localStorage.getItem('token');
 
   if (token) {
