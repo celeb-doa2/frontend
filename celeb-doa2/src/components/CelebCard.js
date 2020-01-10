@@ -94,6 +94,16 @@ const CelebCard = (props) => {
         }
     }
 
+    const DeadTest = () => {
+        if (celeb.dead === true) {
+            console.log(celeb.name, "is dead!");
+            alert(`Yes, sadly ${celeb.name} died in ${celeb.death}.`);
+        } else {
+            console.log(celeb.name, "is alive!");
+            alert(`No Sorry! ${celeb.name} is still alive and kicking!`)
+        }
+    }
+
     return (
 
         <Card>
@@ -106,7 +116,7 @@ const CelebCard = (props) => {
                 <Born>Born: {celeb.birth} - ???</Born>
                 
                 <p><Button type="button" label="ALIVE" onClick={AliveTest}></Button>
-                <Button type="button" label="DEAD" onClick={AliveTest}></Button></p>
+                <Button type="button" label="DEAD" onClick={DeadTest}></Button></p>
         </FormBox>
         </section>
         </Card>
