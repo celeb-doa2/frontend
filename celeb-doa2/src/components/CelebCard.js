@@ -92,7 +92,7 @@ const CelebCard = (props) => {
         if (celeb.dead === false) {
             console.log(celeb.name, "is alive!");
             alert(`Yes, ${celeb.name} is still alive!`);
-            window.location.reload();            
+            window.location.reload();                      
         } else{
             console.log(celeb.name, 'died in', celeb.death);
             alert(`No... ${celeb.name} died in ${celeb.death}`);
