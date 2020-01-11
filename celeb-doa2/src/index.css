@@ -2,7 +2,7 @@
 bright turquoise: #18E7DD
 purple: #7F74FF
 hot pink: #FF23FF
-yellow: #FCFC32 
+yellow:  #FCFC32
 white */
 html {
   min-height: 100%;
@@ -27,6 +27,11 @@ button {
   box-shadow: -1px 3px 5px #3A3574;
   border: 1px solid #02B1DB;
 }
+.image {
+  
+  height: 25%;
+  width: 25%;
+}
 
 .butt {
   display: flex;
@@ -35,8 +40,31 @@ button {
   justify-content: space-around;
 }
 
-.image {
-  
-  height: 25%;
-  width: 25%;
+.tFormat {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+  } 
+
+a {
+  font-size: 1.25em;
+  text-align: center;
+  justify-content: space-evenly;
+  text-decoration: none;
+  line-height: 1;
+  padding: 0%;
+  font-family: 'Staatliches', sans-serif;
+  font-weight: 500;
+  color:white;   
 }
+
+.navLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: justify;
+  justify-content: space-evenly;
+}
+
+

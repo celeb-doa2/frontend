@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 const Button = (props) => {
 
@@ -7,5 +6,4 @@ const Button = (props) => {
         <button {...props}>{props.label}</button>
     )
 }
-
 export default Button;
