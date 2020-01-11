@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Button = (props) => {
 
      return (
-        <button type="button" {...props}>{props.label}</button>
+        <button {...props}>{props.label}</button>
     )
 }
 

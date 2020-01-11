@@ -4,7 +4,15 @@ import styled from "styled-components";
 import Button from "./Button";
 import axios from "axios";
 
+
+
 export default function SignUp() {
+    const Card = styled.section`
+        display: grid;
+        place-items: center;
+        height: 90vh;
+    `;
+    
     const FormBox = styled.form`
      width: 437px;
      height: 450px;
@@ -31,7 +39,7 @@ export default function SignUp() {
     font-size: 1.5em;
     text-align: center;
     line-height: 1;
-    paddding: 0%;
+    padding: 0%;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: #18E7DD;
@@ -66,6 +74,7 @@ export default function SignUp() {
         console.log(data);  {/*you can view user input in console log, confirms data is passed through*/}
         
         delete data.email;
+        console.log(data)
         axios
         .post('/auth/register', data)
         .then(res => {
@@ -80,6 +89,7 @@ export default function SignUp() {
     };
    
     return (
+        <Card>
         <FormBox>
         <form onSubmit={handleSubmit(submitFunc)}>
         <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
@@ -87,11 +97,12 @@ export default function SignUp() {
         <Row><p>
         <ItalicQ><i>Already have an account? </i></ItalicQ>
         <Button label="Click Here!"></Button><br/><br/></p></Row>{/*this will link to SignIn*/}
-            <Input><input type="text" placeholder="Select User Name" name="username" ref={register} /></Input>
-            <Input><input type="text" placeholder="Enter Email" name="email" ref={register} /></Input>
-            <Input><input type="password" placeholder="Select Password" name="password" ref={register} /></Input>
-            <Button label="Submit"><input type="submit" /></Button>
+            <Input><input type="text" placeholder="Select User Name" name="username" ref={register({ required: true })} /></Input>
+            {errors.username && <span>These fields are required</span>}
+            <Input><input type="password" placeholder="Password must be at least 5 characters" name="password" ref={register({ required: true, minlength: 5 })} /></Input>
+            <Button  label="Submit"><input type="submit"  /></Button>
         </form>
         </FormBox>
+        </Card>
     );
 }
