@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, NavLink } from "react-router-dom";
 import React from "react";
 import "./App.css";
 import SignUp from "./components/SignUp";
@@ -9,8 +9,10 @@ import CelebCard from "./components/CelebCard";
 
 function App() {
   return (
-
     <div> 
+      <NavLink to="/signin">Sign In</NavLink>
+      <NavLink to="/signup">Sign Up</NavLink>
+      <NavLink to="/">Play</NavLink>
       <Route exact path="/" component={CelebCard} />
       <Route path="/signup" component={SignUp} />
       <Route path="/signin" component={SignIn}/>
