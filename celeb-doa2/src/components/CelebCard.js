@@ -1,14 +1,15 @@
-import React, {useEffect, useState } from 'react';
+/* eslint-disable */
+import React, {useEffect, useState, Component } from 'react';
 import styled from "styled-components";
 import axios from "axios";
 import Button from "./Button";
-// import { render } from '@testing-library/react';
+// import Score, { state } from "./ScoreBox";
 // import Modali, { useModali } from "modali";
 const CelebCard = (props) => {
     const Card = styled.section`
         display: grid;
         place-items: center;
-        height: 90vh;
+        height: 70vh;
     `;
     const FormBox = styled.form`
         width: 415px;
@@ -91,6 +92,8 @@ const CelebCard = (props) => {
         })
         
     }, []);
+
+    
     const AliveTest = () => {
         if (celeb.dead === false) {
             console.log(celeb.name, "is alive!");
@@ -114,7 +117,7 @@ const CelebCard = (props) => {
             window.location.reload();
         }
     }
-    return (
+    return (    
         <Card>
         <section>
         <FormBox><div>
@@ -123,14 +126,14 @@ const CelebCard = (props) => {
                 <Name>{celeb.name}</Name>
                 <CelebPic><img src={celeb.image_url} className="image" alt="celebPic"></img></CelebPic>
                 <Born>Born: {celeb.birth} - ???</Born>
-                <Known>Known for: {celeb.info}</Known></div>
-                
-                
-                <div class="butt"><Button type="button" label="ALIVE" onClick={AliveTest}></Button>
+                <Known>Occupation: {celeb.info}</Known></div>              
+                <div className="butt"><Button type="button" label="ALIVE" onClick={AliveTest}></Button>
                 <Button type="button" label="DEAD" onClick={DeadTest}></Button></div>
         </FormBox>
         </section>
         </Card>
+        
+
     );
      
 }

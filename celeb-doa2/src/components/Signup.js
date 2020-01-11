@@ -48,14 +48,9 @@ export default function SignUp() {
     padding: 2%;
     margin: 2.5%;
     `;
-    const ItalicQ = styled.i`
-    font-size: 1em;
-    color: white;
-    margin: 0.5%; 
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    text-shadow: 1px 1px #3A3574;
-    `;
+  
+
+
     const {register, handleSubmit, errors} = useForm();
     const submitFunc = (data) => {
         console.log(data);  {/*you can view user input in console log, confirms data is passed through*/}
@@ -80,12 +75,13 @@ export default function SignUp() {
         <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
         <Tagline>Sign up to keep score and compare with friends!</Tagline>
         <Row><p>
-        <ItalicQ><i>Already have an account? </i></ItalicQ>
-        <Button label="Click Here!"></Button><br/><br/></p></Row>{/*this will link to SignIn*/}
             <Input><input type="text" placeholder="Select User Name" name="username" ref={register({ required: true })} /></Input>
             {errors.username && <span>These fields are required</span>}
-            <Input><input type="password" placeholder="Password must be at least 5 characters" name="password" ref={register({ required: true, minlength: 5 })} /></Input>
-            <Button  label="Submit"><input type="submit"  /></Button>
+            <Input><input type="password" placeholder="Password must be at least 5 characters" name="password" ref={register({ required: true, minlength: 5 })} /></Input></p></Row>
+            <div className="butt">
+            <Button  label="Submit"><input type="submit"/></Button></div>
+            <Tagline>Click Logo after Sign Up to keep playing!!</Tagline>
+            
         </form>
         </FormBox>
         </Card>
