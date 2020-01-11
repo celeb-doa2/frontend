@@ -31,7 +31,7 @@ export default function SignUp() {
     font-size: 1.5em;
     text-align: center;
     line-height: 1;
-    paddding: 0%;
+    padding: 0%;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: #18E7DD;
