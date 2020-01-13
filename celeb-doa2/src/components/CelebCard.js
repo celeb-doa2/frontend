@@ -79,7 +79,8 @@ const CelebCard = (props) => {
         `;
 
     const [celeb, setCeleb] = useState([]);
-
+    const [count, setCount] = useState(0);
+    
     useEffect(() => {
         getNewCeleb();
 
