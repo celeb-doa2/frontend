@@ -130,7 +130,7 @@ const CelebCard = (props) => {
         <Timers />
         <Tagline>Score: {count}</Tagline>
         <Card>
-        <section>
+        
         <FormBox><div>
             <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
                 <Tagline>...(not)quite dead yet?</Tagline>
@@ -141,8 +141,9 @@ const CelebCard = (props) => {
                 <div className="butt"><Button type="button" label="ALIVE" onClick={AliveTest}></Button>
                 <Button type="button" label="DEAD" onClick={DeadTest}></Button></div>
         </FormBox>
-        </section>
         </Card>
+        </section>
+        
         
 
     );
