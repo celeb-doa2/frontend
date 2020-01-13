@@ -66,7 +66,9 @@ const SignIn = () => {
                 <Tagline>Ready to Play?!</Tagline>
                     <Input><input type="text" placeholder="Username" name="username" ref={register}/></Input>
                     <Input><input type="password" placeholder="Enter Password" name="password" ref={register}/></Input>
+                    <div className="butt">
                 <Button type="submit" label="Sign In" />
+                </div>
                 </form>
             </FormBox>
         </div>
