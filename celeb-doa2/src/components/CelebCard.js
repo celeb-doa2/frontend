@@ -99,7 +99,10 @@ const CelebCard = (props) => {
         Timers();
     }
 
-
+    function handleScore() {
+        setCount(count + 1);
+    }
+    
     const AliveTest = () => {
         if (celeb.dead === false) {
             console.log(celeb.name, "is alive!");
