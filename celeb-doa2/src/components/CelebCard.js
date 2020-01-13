@@ -3,17 +3,18 @@ import React, {useEffect, useState } from 'react';
 import styled from "styled-components";
 import axios from "axios";
 import Button from "./Button";
+import Timers from "./Timer";
 
 
 const CelebCard = (props) => {
     const Card = styled.section`
         display: grid;
         place-items: center;
-        height: 50vh;
+        height: 70vh;
     `;
     const FormBox = styled.form`
         width: 415px;
-        height: 700px;
+        height: 780px;
         padding: 2%;
         background-color: #7F74FF;
         border-radius: 10px;
@@ -79,8 +80,13 @@ const CelebCard = (props) => {
 
     const [celeb, setCeleb] = useState([]);
     const [count, setCount] = useState(0);
-
+    
     useEffect(() => {
+        getNewCeleb();
+
+    }, []);
+
+    function getNewCeleb() {
         axios
         .get("https://celeb-death-game.herokuapp.com/api/free")
         .then(res => {
@@ -90,28 +96,26 @@ const CelebCard = (props) => {
         .catch(err => {
             console.error("ERROR", err)
         })
-        
-    }, []);
-
-    function handleScore() {
-            setCount(count + 1);
+        Timers();
     }
 
+    function handleScore() {
+        setCount(count + 1);
+    }
+    
     const AliveTest = () => {
         if (celeb.dead === false) {
             console.log(celeb.name, "is alive!");
             alert(`Yes, ${celeb.name} is still alive!`);
-
             handleScore();
-            console.log(`the score: ${count}`);
+            console.log(`the score: ${count}`);               
 
         } else{
             console.log(celeb.name, 'died in', celeb.death);
             alert(`No... ${celeb.name} died in ${celeb.death}`);
         }
-        location.reload();
+        getNewCeleb();
     }
-
     const DeadTest = () => {
         if (celeb.dead === true) {
             console.log(celeb.name, "is dead!");
@@ -120,13 +124,17 @@ const CelebCard = (props) => {
         } else {
             console.log(celeb.name, "is alive!");
             alert(`No Sorry! ${celeb.name} is still alive and kicking!`);
+         
         }
-        location.reload();
+        getNewCeleb();
     }
+
     return (
-        <section> 
+        <section>
+        <Timers />
         <Tagline>Score: {count}</Tagline>
         <Card>
+        
         <FormBox><div>
             <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
                 <Tagline>...(not)quite dead yet?</Tagline>
@@ -139,14 +147,10 @@ const CelebCard = (props) => {
         </FormBox>
         </Card>
         </section>
+        
+        
 
     );
      
 }
 export default CelebCard;
-
-
-
-
-
-
