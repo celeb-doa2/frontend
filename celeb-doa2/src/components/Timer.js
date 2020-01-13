@@ -37,7 +37,8 @@ export default function Timers() {
 console.log('timer');
 
 return (
-<div className="tFormat"><Timer class="timer" formatValue={(value) => `${(value < 10 ? `0${value}` : value)} units `}>
+    <section>
+        <div className="tFormat"><Timer class="timer" formatValue={(value) => `${(value < 10 ? `0${value}` : value)} units `}>
                    <Hours><Timer.Hours formatValue={value => `Timer : ${value}:`} /></Hours>
                  <Mins><Timer.Minutes formatValue={value => `${value}:`} /></Mins>
                     <Secs><Timer.Seconds formatValue={value => `${value}`} /></Secs>
