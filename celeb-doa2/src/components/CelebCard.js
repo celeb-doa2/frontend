@@ -101,9 +101,10 @@ const CelebCard = (props) => {
         if (celeb.dead === false) {
             console.log(celeb.name, "is alive!");
             alert(`Yes, ${celeb.name} is still alive!`);
+
             handleScore();
             console.log(`the score: ${count}`);
-                      
+
         } else{
             console.log(celeb.name, 'died in', celeb.death);
             alert(`No... ${celeb.name} died in ${celeb.death}`);
