@@ -5,15 +5,16 @@ import axios from "axios";
 import Button from "./Button";
 import Timers from "./Timer";
 
+
 const CelebCard = (props) => {
     const Card = styled.section`
         display: grid;
         place-items: center;
-        height: 50vh;
+        height: 70vh;
     `;
     const FormBox = styled.form`
         width: 415px;
-        height: 700px;
+        height: 780px;
         padding: 2%;
         background-color: #7F74FF;
         border-radius: 10px;
@@ -78,7 +79,6 @@ const CelebCard = (props) => {
         `;
 
     const [celeb, setCeleb] = useState([]);
-    const [count, setCount] = useState(0);
 
     useEffect(() => {
         getNewCeleb();
@@ -98,16 +98,13 @@ const CelebCard = (props) => {
         Timers();
     }
 
-    function handleScore() {
-            setCount(count + 1);
-    }
 
     const AliveTest = () => {
         if (celeb.dead === false) {
             console.log(celeb.name, "is alive!");
             alert(`Yes, ${celeb.name} is still alive!`);
             handleScore();
-            console.log(`the score: ${count}`);
+            console.log(`the score: ${count}`);               
 
         } else{
             console.log(celeb.name, 'died in', celeb.death);
@@ -115,7 +112,6 @@ const CelebCard = (props) => {
         }
         getNewCeleb();
     }
-
     const DeadTest = () => {
         if (celeb.dead === true) {
             console.log(celeb.name, "is dead!");
@@ -124,6 +120,7 @@ const CelebCard = (props) => {
         } else {
             console.log(celeb.name, "is alive!");
             alert(`No Sorry! ${celeb.name} is still alive and kicking!`);
+         
         }
         getNewCeleb();
     }
@@ -133,6 +130,7 @@ const CelebCard = (props) => {
         <Timers />
         <Tagline>Score: {count}</Tagline>
         <Card>
+        <section>
         <FormBox><div>
             <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
                 <Tagline>...(not)quite dead yet?</Tagline>
@@ -143,8 +141,9 @@ const CelebCard = (props) => {
                 <div className="butt"><Button type="button" label="ALIVE" onClick={AliveTest}></Button>
                 <Button type="button" label="DEAD" onClick={DeadTest}></Button></div>
         </FormBox>
-        </Card>
         </section>
+        </Card>
+        
 
     );
      
