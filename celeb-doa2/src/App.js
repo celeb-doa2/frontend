@@ -7,14 +7,13 @@ import CelebCard from "./components/CelebCard";
 import Timers from "./components/Timer";
 
 
-
 function App() {
   return (
     <div>
       <div className="navLinks">
       <NavLink to="/signin">Sign In</NavLink>
       <NavLink to="/signup">Sign Up</NavLink>
-      <NavLink to="/">Play</NavLink>
+      <NavLink to="/">Play</NavLink>  
       </div>
       <Timers />
       <Route exact path="/" component={CelebCard} />

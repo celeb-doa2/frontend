@@ -1,10 +1,9 @@
 /* eslint-disable */
-import React, {useEffect, useState, Component } from 'react';
+import React, {useEffect, useState } from 'react';
 import styled from "styled-components";
 import axios from "axios";
 import Button from "./Button";
-// import Score, { state } from "./ScoreBox";
-// import Modali, { useModali } from "modali";
+
 const CelebCard = (props) => {
     const Card = styled.section`
         display: grid;
@@ -78,11 +77,10 @@ const CelebCard = (props) => {
         `;
 
     const [celeb, setCeleb] = useState([]);
-    // const [aliveModal, toggleAliveModal] = useModali();
-    // const [deadModal, toggleDeadModal] = useModali();
+
     useEffect(() => {
         axios
-        .get("https://celeb-death-game.herokuapp.com/api/celebs")
+        .get("https://celeb-death-game.herokuapp.com/api/free")
         .then(res => {
             console.log("API response: ", res.data)
         setCeleb(res.data)
@@ -93,7 +91,7 @@ const CelebCard = (props) => {
         
     }, []);
 
-    
+
     const AliveTest = () => {
         if (celeb.dead === false) {
             console.log(celeb.name, "is alive!");
