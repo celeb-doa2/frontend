@@ -5,6 +5,8 @@ import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import CelebCard from "./components/CelebCard";
 import Timers from "./components/Timer";
+import Score from "./components/Score";
+
 
 
 function App() {
