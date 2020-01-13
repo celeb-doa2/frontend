@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Timer from "react-compound-timer";
 import styled from "styled-components";
 
+
 export default function Timers() {
     const Hours = styled.p`
     font-size: 2em;
@@ -36,7 +37,6 @@ export default function Timers() {
 console.log('timer');
 
 return (
-    <section>
 <div className="tFormat"><Timer class="timer" formatValue={(value) => `${(value < 10 ? `0${value}` : value)} units `}>
                    <Hours><Timer.Hours formatValue={value => `Timer : ${value}:`} /></Hours>
                  <Mins><Timer.Minutes formatValue={value => `${value}:`} /></Mins>
