@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 // import {Link} from 'react-router-dom';
 import Timer from "react-compound-timer";
 import styled from "styled-components";
@@ -31,6 +31,8 @@ export default function Timers() {
     font-weight: 500;
     color: #FCFC32;   
     `;
+
+
 
 console.log('timer');
 

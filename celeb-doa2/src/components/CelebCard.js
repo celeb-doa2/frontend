@@ -95,6 +95,7 @@ const CelebCard = (props) => {
         .catch(err => {
             console.error("ERROR", err)
         })
+        Timers();
     }
 
     function handleScore() {
@@ -126,9 +127,11 @@ const CelebCard = (props) => {
         }
         getNewCeleb();
     }
+
     return (
         <section>
-        <Tagline>Timer: {Timers}        Score: {count}</Tagline>
+        <Timers />
+        <Tagline>Score: {count}</Tagline>
         <Card>
         <FormBox><div>
             <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
