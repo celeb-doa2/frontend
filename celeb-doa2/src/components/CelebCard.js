@@ -3,7 +3,7 @@ import React, {useEffect, useState } from 'react';
 import styled from "styled-components";
 import axios from "axios";
 import Button from "./Button";
-
+import Timers from "./Timer";
 
 const CelebCard = (props) => {
     const Card = styled.section`
@@ -81,6 +81,11 @@ const CelebCard = (props) => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
+        getNewCeleb();
+
+    }, []);
+
+    function getNewCeleb() {
         axios
         .get("https://celeb-death-game.herokuapp.com/api/free")
         .then(res => {
@@ -90,8 +95,7 @@ const CelebCard = (props) => {
         .catch(err => {
             console.error("ERROR", err)
         })
-        
-    }, []);
+    }
 
     function handleScore() {
             setCount(count + 1);
@@ -101,7 +105,6 @@ const CelebCard = (props) => {
         if (celeb.dead === false) {
             console.log(celeb.name, "is alive!");
             alert(`Yes, ${celeb.name} is still alive!`);
-
             handleScore();
             console.log(`the score: ${count}`);
 
@@ -109,7 +112,7 @@ const CelebCard = (props) => {
             console.log(celeb.name, 'died in', celeb.death);
             alert(`No... ${celeb.name} died in ${celeb.death}`);
         }
-        location.reload();
+        getNewCeleb();
     }
 
     const DeadTest = () => {
@@ -121,11 +124,11 @@ const CelebCard = (props) => {
             console.log(celeb.name, "is alive!");
             alert(`No Sorry! ${celeb.name} is still alive and kicking!`);
         }
-        location.reload();
+        getNewCeleb();
     }
     return (
-        <section> 
-        <Tagline>Score: {count}</Tagline>
+        <section>
+        <Tagline>Timer: {Timers}        Score: {count}</Tagline>
         <Card>
         <FormBox><div>
             <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
