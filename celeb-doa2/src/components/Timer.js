@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Timer from "react-compound-timer";
 import styled from "styled-components";
 
@@ -32,6 +32,8 @@ export default function Timers() {
     color: #FCFC32;   
     `;
 
+
+
 console.log('timer');
 
 return (
@@ -40,5 +42,6 @@ return (
                  <Mins><Timer.Minutes formatValue={value => `${value}:`} /></Mins>
                     <Secs><Timer.Seconds formatValue={value => `${value}`} /></Secs>
                 </Timer></div>
-    );
+                </section> 
+    )
 }

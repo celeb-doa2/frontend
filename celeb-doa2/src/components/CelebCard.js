@@ -3,6 +3,8 @@ import React, {useEffect, useState } from 'react';
 import styled from "styled-components";
 import axios from "axios";
 import Button from "./Button";
+import Timers from "./Timer";
+
 
 const CelebCard = (props) => {
     const Card = styled.section`
@@ -79,6 +81,11 @@ const CelebCard = (props) => {
     const [celeb, setCeleb] = useState([]);
 
     useEffect(() => {
+        getNewCeleb();
+
+    }, []);
+
+    function getNewCeleb() {
         axios
         .get("https://celeb-death-game.herokuapp.com/api/free")
         .then(res => {
@@ -88,34 +95,40 @@ const CelebCard = (props) => {
         .catch(err => {
             console.error("ERROR", err)
         })
-        
-    }, []);
+        Timers();
+    }
 
 
     const AliveTest = () => {
         if (celeb.dead === false) {
             console.log(celeb.name, "is alive!");
             alert(`Yes, ${celeb.name} is still alive!`);
-            window.location.reload();                      
+            handleScore();
+            console.log(`the score: ${count}`);               
+
         } else{
             console.log(celeb.name, 'died in', celeb.death);
             alert(`No... ${celeb.name} died in ${celeb.death}`);
-            window.location.reload();
-
         }
+        getNewCeleb();
     }
     const DeadTest = () => {
         if (celeb.dead === true) {
             console.log(celeb.name, "is dead!");
             alert(`Yes, sadly ${celeb.name} died in ${celeb.death}.`);
-            window.location.reload();
+            handleScore();
         } else {
             console.log(celeb.name, "is alive!");
             alert(`No Sorry! ${celeb.name} is still alive and kicking!`);
-            window.location.reload();
+         
         }
+        getNewCeleb();
     }
-    return (    
+
+    return (
+        <section>
+        <Timers />
+        <Tagline>Score: {count}</Tagline>
         <Card>
         <section>
         <FormBox><div>
@@ -136,9 +149,3 @@ const CelebCard = (props) => {
      
 }
 export default CelebCard;
-
-
-
-
-
-
