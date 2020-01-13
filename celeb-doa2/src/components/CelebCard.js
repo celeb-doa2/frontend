@@ -93,12 +93,6 @@ const CelebCard = (props) => {
         
     }, []);
 
-    useEffect(() => {
-        if (Timer.value === 0) {
-            window.location.reload();
-        }
-    })
-
     function handleScore() {
             setCount(count + 1);
     }
@@ -150,9 +144,3 @@ const CelebCard = (props) => {
      
 }
 export default CelebCard;
-
-
-
-
-
-
