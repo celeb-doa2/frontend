@@ -14,7 +14,7 @@ const CelebCard = (props) => {
     `;
     const FormBox = styled.form`
         width: 415px;
-        height: 780px;
+        height: 720px;
         padding: 2%;
         background-color: #7F74FF;
         border-radius: 10px;
@@ -102,7 +102,7 @@ const CelebCard = (props) => {
     function handleScore() {
         setCount(count + 1);
     }
-    
+
     const AliveTest = () => {
         if (celeb.dead === false) {
             console.log(celeb.name, "is alive!");
