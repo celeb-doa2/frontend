@@ -53,7 +53,6 @@ export default function SignUp() {
 
     const {register, handleSubmit, errors} = useForm();
     const submitFunc = (data) => {
-        console.log(data);  {/*you can view user input in console log, confirms data is passed through*/}
         delete data.email;
         axios
         .post('/auth/register', data)
@@ -72,7 +71,7 @@ export default function SignUp() {
         <Card>
         <FormBox>
         <form onSubmit={handleSubmit(submitFunc)}>
-        <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
+        <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png" alt="logoCelebrityDeadOrAlive"></img></a></Logo>
         <Tagline>Sign up to keep score and compare with friends!</Tagline>
         <Row><p>
             <Input><input type="text" placeholder="Select User Name" name="username" ref={register({ required: true })} /></Input>
@@ -87,18 +86,3 @@ export default function SignUp() {
         </Card>
     );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

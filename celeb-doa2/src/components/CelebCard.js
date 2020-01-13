@@ -14,7 +14,7 @@ const CelebCard = (props) => {
     `;
     const FormBox = styled.form`
         width: 415px;
-        height: 720px;
+        height: 700px;
         padding: 2%;
         background-color: #7F74FF;
         border-radius: 10px;
@@ -131,10 +131,11 @@ const CelebCard = (props) => {
 
     return (
         <section>
+        <div className="topRender">
         <Timers />
         <Tagline>Score: {count}</Tagline>
+        </div>
         <Card>
-        
         <FormBox><div>
             <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
                 <Tagline>...(not)quite dead yet?</Tagline>

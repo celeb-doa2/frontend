@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Timer from "react-compound-timer";
 import styled from "styled-components";
 
