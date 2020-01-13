@@ -3,6 +3,7 @@ import useForm from "react-hook-form";
 import styled from "styled-components";
 import Button from "./Button";
 import axios from "axios";
+
 const SignIn = () => {
     const Card = styled.section`
         display: grid;
@@ -38,10 +39,7 @@ const SignIn = () => {
    text-shadow: -3px 3px #3A3574;
    -webkit-text-stroke: 0.5px #03E490;    
    `;
-   const Row = styled.input`
-   align-items: center; 
-   text-align: center;
-   `;
+
    const Input = styled.p`
    display: flex; 
    flex-direction: column;
@@ -49,7 +47,7 @@ const SignIn = () => {
    margin: 2.5%;
    `;
 
-    const {register, handleSubmit, errors} = useForm();
+    const {register, handleSubmit} = useForm();
     const submitData = (data) => {
         console.log(data);
         axios
@@ -62,7 +60,7 @@ const SignIn = () => {
         <div>
             <FormBox>
                 <form onSubmit={handleSubmit(submitData)}>
-                <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
+                <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png" alt="logoCelebrityDeadOrAlive"></img></a></Logo>
                 <Tagline>Ready to Play?!</Tagline>
                     <Input><input type="text" placeholder="Username" name="username" ref={register}/></Input>
                     <Input><input type="password" placeholder="Enter Password" name="password" ref={register}/></Input>

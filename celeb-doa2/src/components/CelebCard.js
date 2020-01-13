@@ -14,11 +14,11 @@ const CelebCard = (props) => {
     `;
     const FormBox = styled.form`
         width: 415px;
-        height: 780px;
+        height: 690px;
         padding: 2%;
         background-color: #7F74FF;
         border-radius: 10px;
-        margin: 2%;
+        margin: 0%;
         align-items: center;
         box-shadow: -5px 5px 15px #3A3574;
     `;
@@ -78,6 +78,16 @@ const CelebCard = (props) => {
         color: white;   
         `;
 
+        const Score = styled.p`
+            font-size: 2em;
+            text-align: center;
+            line-height: 1;
+            padding: 0%;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #FCFC32;   
+    `;
+
     const [celeb, setCeleb] = useState([]);
     const [count, setCount] = useState(0);
     
@@ -102,7 +112,7 @@ const CelebCard = (props) => {
     function handleScore() {
         setCount(count + 1);
     }
-    
+
     const AliveTest = () => {
         if (celeb.dead === false) {
             console.log(celeb.name, "is alive!");
@@ -131,10 +141,11 @@ const CelebCard = (props) => {
 
     return (
         <section>
+        <div className="topRender">
         <Timers />
-        <Tagline>Score: {count}</Tagline>
+        <Score>Score: {count}</Score>
+        </div>
         <Card>
-        
         <FormBox><div>
             <Logo><a href="https://doa2.netlify.com/"><img src="https://i.imgur.com/Kc4PN2y.png"></img></a></Logo>
                 <Tagline>...(not)quite dead yet?</Tagline>

@@ -66,5 +66,10 @@ a {
   text-align: justify;
   justify-content: space-evenly;
 }
-
+.topRender{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
 
