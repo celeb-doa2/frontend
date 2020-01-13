@@ -82,7 +82,7 @@ const CelebCard = (props) => {
     // const [deadModal, toggleDeadModal] = useModali();
     useEffect(() => {
         axios
-        .get("https://celeb-death-game.herokuapp.com/api/celebs")
+        .get("https://celeb-death-game.herokuapp.com/api/free")
         .then(res => {
             console.log("API response: ", res.data)
         setCeleb(res.data)
