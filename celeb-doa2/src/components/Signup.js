@@ -79,7 +79,7 @@ export default function SignUp() {
             {errors.username && <span>These fields are required</span>}
             <Input><input type="password" placeholder="Password must be at least 5 characters" name="password" ref={register({ required: true, minlength: 5 })} /></Input></p></Row>
             <div className="butt">
-            <Button  label="Submit"><input type="submit"/></Button></div>
+            <Button label="Submit"><input type="submit"/></Button></div>
             <Tagline>Click Logo after Sign Up to keep playing!!</Tagline>
             
         </form>
