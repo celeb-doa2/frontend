@@ -14,11 +14,11 @@ const CelebCard = (props) => {
     `;
     const FormBox = styled.form`
         width: 415px;
-        height: 700px;
+        height: 690px;
         padding: 2%;
         background-color: #7F74FF;
         border-radius: 10px;
-        margin: 2%;
+        margin: 0%;
         align-items: center;
         box-shadow: -5px 5px 15px #3A3574;
     `;
@@ -78,6 +78,16 @@ const CelebCard = (props) => {
         color: white;   
         `;
 
+        const Score = styled.p`
+            font-size: 2em;
+            text-align: center;
+            line-height: 1;
+            padding: 0%;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #FCFC32;   
+    `;
+
     const [celeb, setCeleb] = useState([]);
     const [count, setCount] = useState(0);
     
@@ -133,7 +143,7 @@ const CelebCard = (props) => {
         <section>
         <div className="topRender">
         <Timers />
-        <Tagline>Score: {count}</Tagline>
+        <Score>Score: {count}</Score>
         </div>
         <Card>
         <FormBox><div>
